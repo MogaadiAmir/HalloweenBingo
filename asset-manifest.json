@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/HalloweenBingo/static/css/main.50b576bb.chunk.css",
-    "main.js": "/HalloweenBingo/static/js/main.731f062b.chunk.js",
-    "main.js.map": "/HalloweenBingo/static/js/main.731f062b.chunk.js.map",
+    "main.js": "/HalloweenBingo/static/js/main.7e139a97.chunk.js",
+    "main.js.map": "/HalloweenBingo/static/js/main.7e139a97.chunk.js.map",
     "runtime-main.js": "/HalloweenBingo/static/js/runtime-main.400ff643.js",
     "runtime-main.js.map": "/HalloweenBingo/static/js/runtime-main.400ff643.js.map",
     "static/js/2.8db88f58.chunk.js": "/HalloweenBingo/static/js/2.8db88f58.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.400ff643.js",
     "static/js/2.8db88f58.chunk.js",
     "static/css/main.50b576bb.chunk.css",
-    "static/js/main.731f062b.chunk.js"
+    "static/js/main.7e139a97.chunk.js"
   ]
 }
