@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
-import './App.css';
 import shuffle from "shuffle-array";
 import GamePanel from "./components/GamePanel";
 import Reward from "react-rewards";
-import dialogs from "./components/dialogs"
-
+import dialogs from "./components/dialogs";
+import "./App.css";
 
 const App = () => {
   const [board, setBoard] = useState([]);
@@ -16,8 +15,6 @@ const App = () => {
   useEffect(() => {
     initialize();
   }, []);
-
- 
 
   const initialize = () => {
     let data = shuffle(dialogs);
@@ -38,32 +35,58 @@ const App = () => {
     console.log(bingoSelector);
     if (!board.length) return;
 
- //Test selected ligne 
+    //Select diagonal with bingoSelector 10
+    if (!bingoSelector[10]) {
+      let j = 0;
+      while (j <= 24 && board[j].selected) {
+        j += 6;
+      }
+      if (j === 30) {
+        bingoSelector[10] = true;
+        ref.current.rewardMe();
+      }
+    }
+    //Select diagonal with bingoSelector 11
+    if (!bingoSelector[11]) {
+      let j = 4;
+      while (j <= 20 && board[j].selected) {
+        j += 4;
+      }
+      if (j === 24) {
+        bingoSelector[11] = true;
+        ref.current.rewardMe();
+      }
+    }
 
- //Test diagonal with bingoSelector 10
- if(!bingoSelector[10]) {
-      
-  let j=0;
-  while(j<=24 && board[j].selected ) {
-    j+=6;
-  }
-  if (j===30) {
-    bingoSelector[10]=true;
-    ref.current.rewardMe();
-  }
- }
-}
- //Test diagonal with bingoSelector 11
-if(!bingoSelector[11] ) {
-  let j=4;
-  while(j<=20 && board[j].selected ) {
-    j+=4;
-  }
-  if (j===24) {
-    bingoSelector[11]=true;
-    ref.current.rewardMe();
-  }
-}
+    for (let i = 0; i < 5; i++) {
+      //Select from column
+      if (!bingoSelector[i + 5]) {
+        let j = i;
+        while (j <= i + 20 && board[j].selected) {
+          j += 5;
+        }
+        if (j === i + 25) {
+          bingoSelector[i + 5] = true;
+          ref.current.rewardMe();
+        }
+      }
+      //Select from row
+      if (!bingoSelector[i]) {
+        let j = i * 5;
+        while (j <= i * 5 + 4 && board[j].selected) {
+          j++;
+        }
+        if (j === i * 5 + 5) {
+          bingoSelector[i] = true;
+          ref.current.rewardMe();
+        }
+      }
+    }
+    //Set Victory "you won"
+    if (board.every((val) => val.selected === true)) {
+      setVictory(true);
+    }
+  };
 
   const selectCell = (index) => {
     // if (gameWon) return;
@@ -84,18 +107,17 @@ if(!bingoSelector[11] ) {
           emoji: ["🎃", "🍬", "🍭", "🎃", "🍬", "🍭", "🎃", "🕸️"],
         }}
       ></Reward>
+
       {victory ? (
-        <h1 className="header">VICTORY 🥳🥳🥳🥳 </h1>
+        <h1 className="header">You won 🎃 🎃 🎃</h1>
       ) : (
         <h1 className="header">Halloween BINGO</h1>
       )}
       <GamePanel data={board} selectCell={selectCell} />
-      
-        <button className="reload" onClick={initialize}>
-          Reload Game
-        </button>
-     
-     
+
+      <button className="reload" onClick={initialize}>
+        Reload Game
+      </button>
     </div>
   );
 };
