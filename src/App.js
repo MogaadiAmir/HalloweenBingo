@@ -78,7 +78,7 @@ const App = () => {
     }
 
     if (
-      board[20,24].selected &&
+      board[20, 24].selected &&
      
       !bingoSelector[4]
     ) {
