@@ -10,7 +10,7 @@ const GamePanel = ({ data, selectCell }) => {
           className={`cell ${selected ? "selected" : ""}`}
           onClick={() => selectCell(index)}
         >
-          <span className="number">{index + 1}</span>
+          <span className="number">{index + 0}</span>
           <span>{value}</span>
         </button>
       ))}

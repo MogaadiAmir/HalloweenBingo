@@ -38,8 +38,9 @@ const App = () => {
     console.log(bingoSelector);
     if (!board.length) return;
 
-    // Test selected ligne 
- //test diag
+ //Test selected ligne 
+
+ //Test diagonal with bingoSelector 10
  if(!bingoSelector[10]) {
       
   let j=0;
@@ -51,6 +52,17 @@ const App = () => {
     ref.current.rewardMe();
   }
  }
+}
+ //Test diagonal with bingoSelector 11
+if(!bingoSelector[11] ) {
+  let j=4;
+  while(j<=20 && board[j].selected ) {
+    j+=4;
+  }
+  if (j===24) {
+    bingoSelector[11]=true;
+    ref.current.rewardMe();
+  }
 }
 
   const selectCell = (index) => {
