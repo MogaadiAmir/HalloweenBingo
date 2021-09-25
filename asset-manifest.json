@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/HalloweenBingo/static/css/main.50b576bb.chunk.css",
+    "main.js": "/HalloweenBingo/static/js/main.731f062b.chunk.js",
+    "main.js.map": "/HalloweenBingo/static/js/main.731f062b.chunk.js.map",
+    "runtime-main.js": "/HalloweenBingo/static/js/runtime-main.400ff643.js",
+    "runtime-main.js.map": "/HalloweenBingo/static/js/runtime-main.400ff643.js.map",
+    "static/js/2.8db88f58.chunk.js": "/HalloweenBingo/static/js/2.8db88f58.chunk.js",
+    "static/js/2.8db88f58.chunk.js.map": "/HalloweenBingo/static/js/2.8db88f58.chunk.js.map",
+    "static/js/3.75853e42.chunk.js": "/HalloweenBingo/static/js/3.75853e42.chunk.js",
+    "static/js/3.75853e42.chunk.js.map": "/HalloweenBingo/static/js/3.75853e42.chunk.js.map",
+    "index.html": "/HalloweenBingo/index.html",
+    "static/css/main.50b576bb.chunk.css.map": "/HalloweenBingo/static/css/main.50b576bb.chunk.css.map",
+    "static/js/2.8db88f58.chunk.js.LICENSE.txt": "/HalloweenBingo/static/js/2.8db88f58.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/HalloweenBingo/static/media/halloween.893c49d8.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.400ff643.js",
+    "static/js/2.8db88f58.chunk.js",
+    "static/css/main.50b576bb.chunk.css",
+    "static/js/main.731f062b.chunk.js"
+  ]
+}
