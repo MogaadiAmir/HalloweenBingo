@@ -39,62 +39,19 @@ const App = () => {
     if (!board.length) return;
 
     // Test selected ligne 
-    if (
-      board[0,4].selected &&
+ //test diag
+ if(!bingoSelector[10]) {
       
-      !bingoSelector[0]
-    ) {
-      bingoSelector[0] = true;
-
-
-      ref.current.rewardMe();
-      console.log(board[0].selected);
-      console.log(bingoSelector[0]);
-    }
-
-    if (
-      board[5,9].selected &&
-     
-      !bingoSelector[1]
-    ) {
-      bingoSelector[1] = true;
-      ref.current.rewardMe();
-    }
-    if (
-      board[10,14].selected &&
-     
-      !bingoSelector[2]
-    ) {
-      bingoSelector[2] = true;
-      ref.current.rewardMe();
-    }
-    if (
-      board[15,19].selected &&
-      
-      !bingoSelector[3]
-    ) {
-      bingoSelector[3] = true;
-      ref.current.rewardMe();
-    }
-
-    if (
-      board[20, 24].selected &&
-     
-      !bingoSelector[4]
-    ) {
-      bingoSelector[4] = true;
-      ref.current.rewardMe();
-    }
-
-
-
-    if (board.every((val) => val.selected === true)) {
-      setVictory(true);
-    }
-    // else {
-    //   setGameWon(false);
-    // }
-  };
+  let j=0;
+  while(j<=24 && board[j].selected ) {
+    j+=6;
+  }
+  if (j===30) {
+    bingoSelector[10]=true;
+    ref.current.rewardMe();
+  }
+ }
+}
 
   const selectCell = (index) => {
     // if (gameWon) return;
