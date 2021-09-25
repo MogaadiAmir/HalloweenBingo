@@ -32,7 +32,7 @@ const App = () => {
   };
 
   const isWinner = () => {
-    console.log(bingoSelector);
+    // console.log(bingoSelector);
     if (!board.length) return;
 
     //Select diagonal with bingoSelector 10
